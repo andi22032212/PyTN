@@ -11,11 +11,11 @@
 
 from __future__ import absolute_import, division, print_function, unicode_literals
 
-DEFAULT_TX_FEE = 100000
-DEFAULT_ASSET_FEE = 100000000
-DEFAULT_MATCHER_FEE = 300000
-DEFAULT_LEASE_FEE = 100000
-DEFAULT_ALIAS_FEE = 100000
+DEFAULT_TX_FEE = 2000000
+DEFAULT_ASSET_FEE = 100000000000
+DEFAULT_MATCHER_FEE = 4000000
+DEFAULT_LEASE_FEE = 2000000
+DEFAULT_ALIAS_FEE = 1000000000
 VALID_TIMEFRAMES = (5, 15, 30, 60, 240, 1440)
 MAX_WDF_REQUEST = 100
 
@@ -26,7 +26,7 @@ from .asset import *
 from .order import *
 
 OFFLINE = False
-NODE = 'https://nodes.wavesnodes.com'
+NODE = 'https://privatenode.blackturtle.eu'
 
 ADDRESS_VERSION = 1
 ADDRESS_CHECKSUM_LENGTH = 4
@@ -34,11 +34,11 @@ ADDRESS_HASH_LENGTH = 20
 ADDRESS_LENGTH = 1 + 1 + ADDRESS_CHECKSUM_LENGTH + ADDRESS_HASH_LENGTH
 
 CHAIN = 'mainnet'
-CHAIN_ID = 'W'
-MATCHER = 'https://nodes.wavesnodes.com'
+CHAIN_ID = 'L'
+MATCHER = 'https://privatematcher.blackturtle.eu'
 MATCHER_PUBLICKEY = ''
 
-DATAFEED = 'http://marketdata.wavesplatform.com'
+DATAFEED = 'https://bot.blackturtle.eu/api-0.0.1-SNAPSHOT'
 
 logging.getLogger("requests").setLevel(logging.WARNING)
 console = logging.StreamHandler()
@@ -63,9 +63,9 @@ def setChain(chain = CHAIN, chain_id = None):
         CHAIN = chain
         CHAIN_ID = chain_id
     else:
-        if chain.lower()=='mainnet' or chain.lower()=='w':
+        if chain.lower()=='mainnet' or chain.lower()=='l':
             CHAIN = 'mainnet'
-            CHAIN_ID = 'W'
+            CHAIN_ID = 'L'
         elif chain.lower()=='hacknet' or chain.lower()=='u':
             CHAIN = 'hacknet'
             CHAIN_ID = 'U'
