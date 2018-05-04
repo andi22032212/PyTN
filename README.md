@@ -1,11 +1,11 @@
 # PyWaves
-PyWaves is an object-oriented Python interface to the Waves blockchain platform.
+PyWaves is an object-oriented Python interface to the Turtle Network platform.
 
 ## Getting Started
 
 You can install PyWaves using:
 
-    pip install pywaves
+    pip install -e git+https://github.com/andi22032212/PyWaves.git
 
 ## Documentation
 
@@ -21,7 +21,7 @@ The library utilizes classes to represent various Waves data structures:
 import pywaves as pw
 
 myAddress = pw.Address(privateKey='CtMQWJZqfc7PRzSWiMKaGmWFm4q2VN5fMcYyKDBPDx6S')
-otherAddress = pw.Address('3PNTcNiUzppQXDL9RZrK3BcftbujiFqrAfM')
+otherAddress = pw.Address('3Jcz4rj98NUQAgEr3BVXaEvrSBVQ8eHb3F4')
 myAddress.sendWaves(otherAddress, 10000000)
 myToken = myAddress.issueAsset('Token1', 'My Token', 1000, 0)
 while not myToken.status():
@@ -165,11 +165,11 @@ __pywaves.Order(orderId, assetPair, address='')__ Creates a new Order object
 
 ### Default Fees
 The fees for waves/asset transfers, asset issue/reissue/burn and matcher transactions are set by default as follows:
-* DEFAULT_TX_FEE = 100000
-* DEFAULT_ASSET_FEE = 100000000
-* DEFAULT_MATCHER_FEE = 1000000
-* DEFAULT_LEASE_FEE = 100000
-* DEFAULT_ALIAS_FEE = 100000
+* DEFAULT_TX_FEE = 2000000
+* DEFAULT_ASSET_FEE = 100000000000
+* DEFAULT_MATCHER_FEE = 4000000
+* DEFAULT_LEASE_FEE = 2000000
+* DEFAULT_ALIAS_FEE = 1000000000
 
 ## More Examples
 
@@ -182,7 +182,7 @@ import pywaves as pw
 myAddress = pw.Address()  
 
 # set an address with an address
-myAddress = pw.Address('3P6WfA4qYtkgwVAsWiiB6yaea2X8zyXncJh')
+myAddress = pw.Address('3Jcz4rj98NUQAgEr3BVXaEvrSBVQ8eHb3F4')
 
 # get an existing address from seed
 myAddress = pw.Address(seed='seven wrist bargain hope pattern banner plastic maple student chaos grit next space visa answer')
@@ -201,7 +201,7 @@ myAddress = pw.Address(seed='seven wrist bargain hope pattern banner plastic map
 ```python
 import pywaves as pw
 
-myAddress = pw.Address('3P6WfA4qYtkgwVAsWiiB6yaea2X8zyXncJh')
+myAddress = pw.Address('3Jcz4rj98NUQAgEr3BVXaEvrSBVQ8eHb3F4')
 
 # get Waves balance
 print("Your balance is %18d" % myAddress.balance())
@@ -220,12 +220,12 @@ import pywaves as pw
 myAddress = pw.Address(privateKey='CtMQWJZqfc7PRzSWiMKaGmWFm4q2VN5fMcYyKDBPDx6S')
 
 # send Waves to another address
-myAddress.sendWaves(recipient = pw.Address('3PNTcNiUzppQXDL9RZrK3BcftbujiFqrAfM'),
+myAddress.sendWaves(recipient = pw.Address('3Jcz4rj98NUQAgEr3BVXaEvrSBVQ8eHb3F4'),
                     amount = 100000000)
 
 # send asset to another address
 myToken = pw.Asset('4ZzED8WJXsvuo2MEm2BmZ87Azw8Sx7TVC6ufSUA5LyTV')
-myAddress.sendAsset(recipient = pw.Address('3PNTcNiUzppQXDL9RZrK3BcftbujiFqrAfM'),
+myAddress.sendAsset(recipient = pw.Address('3Jcz4rj98NUQAgEr3BVXaEvrSBVQ8eHb3F4'),
                     asset = myToken,
                     amount = 1000)
 ```
@@ -254,11 +254,11 @@ myAddress.createAlias("MYALIAS1")
 ```python
 import pywaves as pw
 
-recipients =   ['3PBbp6bg2YEnHfdJtYM7jzzXYQeb7sx5oFg',
-                '3P4A27aCd3skNja46pcgrLYEnK36TkSzgUp',
-                '3P81U3ujotNUwZMWALdcJQLzBVbrAuUQMfs',
-                '3PGcKEMwQcEbmeL8Jhe9nZQRBNCNdcHCoZP',
-                '3PKjtzZ4FhKrJUikbQ1hRk5xbwVKDyTyvkn']
+recipients =   ['3Jcz4rj98NUQAgEr3BVXaEvrSBVQ8eHb3F4',
+                '3Jcz4rj98NUQAgEr3BVXaEvrSBVQ8eHb3F4',
+                '3Jcz4rj98NUQAgEr3BVXaEvrSBVQ8eHb3F4',
+                '3Jcz4rj98NUQAgEr3BVXaEvrSBVQ8eHb3F4',
+                '3Jcz4rj98NUQAgEr3BVXaEvrSBVQ8eHb3F4']
 
 myAddress = pw.Address(privateKey = "CtMQWJZqfc7PRzSWiMKaGmWFm4q2VN5fMcYyKDBPDx6S")
 
@@ -271,9 +271,9 @@ for address in recipients:
 import pywaves as pw
 
 transfers = [
-	{ 'recipient': '3N1xca2DY8AEwqRDAJpzUgY99eq8J9h4rB3', 'amount': 1 },
-	{ 'recipient': '3N3YWbQ27NnK7tek6ASFh38Bj93guLxxSi1', 'amount': 2 },
-	{ 'recipient': '3MwiB5UkWxt4X1qJ8DQpP2LpM3m48V1z5rC', 'amount': 3 }
+	{ 'recipient': '3Jcz4rj98NUQAgEr3BVXaEvrSBVQ8eHb3F4', 'amount': 1 },
+	{ 'recipient': '3Jcz4rj98NUQAgEr3BVXaEvrSBVQ8eHb3F4', 'amount': 2 },
+	{ 'recipient': '3Jcz4rj98NUQAgEr3BVXaEvrSBVQ8eHb3F4', 'amount': 3 }
 ]
 
 address = pw.Address(privateKey = "CtMQWJZqfc7PRzSWiMKaGmWFm4q2VN5fMcYyKDBPDx6S")
@@ -285,9 +285,9 @@ address.massTransferWaves(transfers)
 import pywaves as pw
 
 transfers = [
-	{ 'recipient': '3N1xca2DY8AEwqRDAJpzUgY99eq8J9h4rB3', 'amount': 1 },
-	{ 'recipient': '3N3YWbQ27NnK7tek6ASFh38Bj93guLxxSi1', 'amount': 2 },
-	{ 'recipient': '3MwiB5UkWxt4X1qJ8DQpP2LpM3m48V1z5rC', 'amount': 3 }
+	{ 'recipient': '3Jcz4rj98NUQAgEr3BVXaEvrSBVQ8eHb3F4', 'amount': 1 },
+	{ 'recipient': '3Jcz4rj98NUQAgEr3BVXaEvrSBVQ8eHb3F4', 'amount': 2 },
+	{ 'recipient': '3Jcz4rj98NUQAgEr3BVXaEvrSBVQ8eHb3F4', 'amount': 3 }
 ]
 
 address = pw.Address(privateKey = "CtMQWJZqfc7PRzSWiMKaGmWFm4q2VN5fMcYyKDBPDx6S")
@@ -373,7 +373,7 @@ import pywaves as pw
 pw.setNode(node = 'http://127.0.0.1:6869', chain = 'testnet')
 
 myAddress = pw.Address(privateKey = 'CsBpQpNE3Z1THNMS9vJPaXqYwN9Hgmhd9AsAPrM3tiuJ')
-minerAddress = pw.Address('3NBThmVJmcexzJ9itP9KiiC2K6qnGQwpqMq')
+minerAddress = pw.Address('3Jcz4rj98NUQAgEr3BVXaEvrSBVQ8eHb3F4')
 
 # lease 1000 Waves to minerAddress
 leaseId = myAddress.lease(minerAddress, 100000000000)
@@ -389,8 +389,8 @@ myAddress.leaseCancel(leaseId)
 #### Check an address balance:
 ```
 >>> import pywaves as pw
->>> pw.Address('3P31zvGdh6ai6JK6zZ18TjYzJsa1B83YPoj')
-address = 3P31zvGdh6ai6JK6zZ18TjYzJsa1B83YPoj
+>>> pw.Address('3Jcz4rj98NUQAgEr3BVXaEvrSBVQ8eHb3F4')
+address = 3Jcz4rj98NUQAgEr3BVXaEvrSBVQ8eHb3F4
 publicKey = 
 privateKey = 
 seed = 
@@ -412,7 +412,7 @@ balances:
 ```
 >>> import pywaves as pw
 >>> pw.Address()
-address = 3P6WfA4qYtkgwVAsWiiB6yaea2X8zyXncJh
+address = 3Jcz4rj98NUQAgEr3BVXaEvrSBVQ8eHb3F4
 publicKey = EYNuSmW4Adtcc6AMCZyxkiHMPmF2BZ2XxvjpBip3UFZL
 privateKey = CtMQWJZqfc7PRzSWiMKaGmWFm4q2VN5fMcYyKDBPDx6S
 seed = seven wrist bargain hope pattern banner plastic maple student chaos grit next space visa answer
@@ -443,7 +443,7 @@ status = Accepted
 id = ARZdYgfXz3ksRMvhnGeLLJnn3CQnz7RCa7U6dVw3zert
 asset1 = AFzL992FQbhcgSZGKDKAiRWcjtthM55yVCE99hwbHf88
 asset2 = 49Aha2RR2eunR3KZFwedfdi7K9v5MLQbLYcmVdp2QkZT
-sender.address = 3P6WfA4qYtkgwVAsWiiB6yaea2X8zyXncJh
+sender.address = 3Jcz4rj98NUQAgEr3BVXaEvrSBVQ8eHb3F4
 sender.publicKey = EYNuSmW4Adtcc6AMCZyxkiHMPmF2BZ2XxvjpBip3UFZL
 matcher = http://127.0.0.1:6886
 ```
@@ -456,7 +456,7 @@ status = Cancelled
 id = ARZdYgfXz3ksRMvhnGeLLJnn3CQnz7RCa7U6dVw3zert
 asset1 = AFzL992FQbhcgSZGKDKAiRWcjtthM55yVCE99hwbHf88
 asset2 = 49Aha2RR2eunR3KZFwedfdi7K9v5MLQbLYcmVdp2QkZT
-sender.address = 3P6WfA4qYtkgwVAsWiiB6yaea2X8zyXncJh
+sender.address = 3Jcz4rj98NUQAgEr3BVXaEvrSBVQ8eHb3F4
 sender.publicKey = EYNuSmW4Adtcc6AMCZyxkiHMPmF2BZ2XxvjpBip3UFZL
 matcher = http://127.0.0.1:6886
 ```
@@ -468,7 +468,7 @@ matcher = http://127.0.0.1:6886
 >>> import pywaves as pw
 >>> pw.setOffline()
 >>> myAddress=pw.Address(privateKey="F2jVbjrKzjUsZ1AQRdnd8MmxFc85NQz5jwvZX4BXswXv")
->>> recipient=pw.Address("3P8Ya6Ary5gzwnzbBXDp3xjeNG97JEiPcdA")
+>>> recipient=pw.Address("3Jcz4rj98NUQAgEr3BVXaEvrSBVQ8eHb3F4")
 # sign a future tx to transfer 100 WAVES to recipient
 # the tx is valid on Jan 1st, 2020 12:00pm
 >>> myAddress.sendWaves(recipient, amount=100e8, timestamp=1577880000000)
@@ -479,7 +479,7 @@ matcher = http://127.0.0.1:6886
 			   "senderPublicKey": "27zdzBa1q46RCMamZ8gw2xrTGypZnbzXs5J1Y2HbUmEv",
 			   "amount": 10000000000,
 			   "attachment": "",
-			   "recipient": "3P8Ya6Ary5gzwnzbBXDp3xjeNG97JEiPcdA"
+			   "recipient": "3Jcz4rj98NUQAgEr3BVXaEvrSBVQ8eHb3F4"
 			   "signature": "YetPopTJWC4WBPXbneWv9g6YEp6J9g9rquZWjewjdQnFbmaxtXjrRsUu69NZzHebVzUGLrhQiFFoguXJwdUn8BH"}'}
 ```
 
@@ -499,7 +499,7 @@ matcher = http://127.0.0.1:6886
                "senderPublicKey": "27zdzBa1q46RCMamZ8gw2xrTGypZnbzXs5J1Y2HbUmEv",
                "amount": 10000000000,
                "attachment": "",
-               "recipient": "3P3UbyQM9W7WzTgjYkLuBrPZZeWsiUtCcpv",
+               "recipient": "3Jcz4rj98NUQAgEr3BVXaEvrSBVQ8eHb3F4",
                "signature": "5VgT6qWxJwxEyrxFNfsi67QqbyUiGq9Ka7HVzgovRTTDT8nLRyuQv2wBAJQhRiXDkTTV6zsQmHnBkh8keCaFPoNT"}'}
 # sign the 'unlock' tx to send funds back to myAddress (valid on Jan 1st, 2020)
 >>> lockAddress.sendWaves(myAddress, 100e8-200000, txFee=200000, timestamp=1577880000000)
@@ -510,7 +510,7 @@ matcher = http://127.0.0.1:6886
 			   "senderPublicKey": "52XnBGnAVZmw1CHo9aJPiMsVMiTWeNGSNN9aYJ7cDtx4",
 			   "amount": 9999800000,
 			   "attachment": "",
-			   "recipient": "3P7tfdCaTyYCfg5ojxNahEJDSS4MZ7ybXBY",
+			   "recipient": "3Jcz4rj98NUQAgEr3BVXaEvrSBVQ8eHb3F4",
 			   "signature": "3beyz1sqKefP96LaXWT3CxdPRW86DAxcj6wgWPyyKq3SgdotVqnKyWXDyeHnBzCq1nC7JA9CChTmo1c1iVAv6C4T"}'}
 # delete lockbox address and private key
 >>> del lockAddress
