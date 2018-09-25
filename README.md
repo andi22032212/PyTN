@@ -1,4 +1,4 @@
-# PyWaves
+# Pytn
 PyWaves is an object-oriented Python interface to the Turtle Network platform.
 
 ## Getting Started
