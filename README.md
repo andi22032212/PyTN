@@ -5,7 +5,7 @@ PyWaves is an object-oriented Python interface to the Turtle Network platform.
 
 You can install PyWaves using:
 
-    pip install -e git+https://github.com/andi22032212/PyWaves.git
+    pip install -e git+https://github.com/andi22032212/PyTN.git
 
 ## Documentation
 
